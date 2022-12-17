@@ -10,19 +10,19 @@ class MasterMind:
         from random import choices
 
         actual = ["running", "code_hacked", "time_left", "attempts_exhausted"]
-        self.attempt = attempt
-        self.option = option
-        self.digit = digit
+        self.__attempt = attempt
+        self.__option = option
+        self.__digit = digit
 
-        self.game_id = uuid.uuid4()
-        self.possible_values = [_ for _ in range(1, self.option + 1)]
-        self.__secret_code = choices(self.possible_values , k = self.digit)
-        self.game_status = "running"
-        self.current_att = 0
-        self.game_active = True
-        self.code_hacked = False
-        self.time_left = False
-        self.attempts_exhausted = False
+        self.game_id = str(uuid.uuid4())
+        self.__possible_values = [_ for _ in range(1, self.__option + 1)]
+        self.__secret_code = choices(self.__possible_values , k = self.__digit)
+        self.__game_status = "running"
+        self.__current_att = 0
+        self.__game_active = True
+        self.__code_hacked = False
+        self.__time_left = False
+        self.__attempts_exhausted = False
         print(f"Created new game with ID {self.game_id}")
         print(f"Good luck")
 
@@ -30,7 +30,7 @@ class MasterMind:
         print(f"Secret code is: {self.__secret_code}")
 
     def list_of_values(self):
-        return self.possible_values
+        return self.__possible_values
 
 while game_options.get(next_game, True):
     game_commands = [
@@ -44,7 +44,7 @@ while game_options.get(next_game, True):
     ]
     current_game = ""
     while current_game not in game_commands:
-        current_game = str.lower(input("Co chces delat dale?"))
+        current_game = str.lower(input("Co chces delat dale? "))
     match current_game:
         case "new_game":
             the_game = MasterMind()
