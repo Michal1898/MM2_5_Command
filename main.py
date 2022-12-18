@@ -24,6 +24,9 @@ class MasterMind:
         self.__all_values_OK = False
         self.__time_left = False
         self.__all_attempts_exhausted = False
+
+        self.__attempts_pool=[]
+
         print(f"Created new game with ID {self.__game_id}")
         print(f"Good luck")
 
@@ -65,6 +68,8 @@ class MasterMind:
 
         #print(MM_Report)
         return MM_Report
+
+    class Attempt:
 
 
 while game_options.get(next_game, True):
