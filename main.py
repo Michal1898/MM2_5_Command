@@ -56,6 +56,24 @@ class MasterMind:
     def list_of_values(self):
         return self.__possible_values
 
+    def is_running(self):
+        return self.__game_active
+
+    def game_status(self):
+        return self.__game_status
+
+    def active_attempt(self):
+        return self.__current_att
+
+    def rest_attempt(self):
+        rest=self.__attempt - self.__current_att
+        return rest
+
+    def attempt_pool(self):
+        return self.__attempts_pool
+
+
+
     def next_attempt(self, your_attempt ="0 0 0 0 0"):
         #self.__game_active=False
         #self.__current_att=10
@@ -96,6 +114,29 @@ class MasterMind:
             the_attempt=Attempt(self.__current_att, your_attempt, black_stick , white_stick)
             self.__current_att+=1
             self.__attempts_pool.append(the_attempt)
+
+            # Update status of the current game
+            if white_stick + black_stick == len(secret):
+                self.__all_values_OK = True
+                print("Congratulate, you quessed all Values!")
+
+            if black_stick == len(secret):
+                print("Congratulate, you hacked the secret!")
+                self.__code_hacked = True
+                self.__game_active = False
+                self.__game_status = "code_hacked"
+
+            if  len(self.__attempts_pool)<self.__attempt:
+                pass
+            elif len(self.__attempts_pool) == self.__attempt:
+                self.__game_active = False
+                if self.__code_hacked == False:
+                    self.__game_status == "attempts_exhausted"
+            else:
+                # this case can't occur,
+                # but better safe than sorry!
+                print("Critical Error!")
+
             return True, the_attempt
 
 
@@ -163,16 +204,18 @@ match current_game:
 
         the_game = MasterMind()
         # the_game.show_secret()
-        # print(the_game.list_of_values())
-        # print(repr(the_game))
+        #print(the_game.list_of_values())
+        #print(repr(the_game))
 
-        for _ in range(0,100):
-            single_attempt=the_game.next_attempt("3 4 5 6 8")
-            print([single_attempt])
+        while the_game.is_running():
+            quess_code=input("Insert your code: ")
+            single_attempt=the_game.next_attempt(quess_code)
+            print(repr(the_game))
+            print(the_game.attempt_pool())
 
 
-        the_attempt = Attempt(13, [1 ,2 ,3 ,8 ,111], 19, 7)
-        print(the_attempt)
+        #the_attempt = Attempt(13, [1 ,2 ,3 ,8 ,111], 19, 7)
+        #print(the_attempt)
         # the_attempt2 = Attempt("7 7 7 13 13 13", 17)
         # the_game = MasterMind(7,10,4)
         # the_game.show_secret()
