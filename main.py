@@ -14,21 +14,13 @@ class Attempt:
 
     def __repr__(self):
         self.att_Report = ""
-        self.att_Report+= f"{self.__index}. "
+        self.att_Report+= f"{self.__index + 1}. "
         self.att_Report+= f"{self.__your_code} "
         self.att_Report+= f"Black: {self.__black_stick} "
         self.att_Report+= f"White: {self.__white_stick} "
         self.att_Report+="\n"
         return self.att_Report
 
-    def __self__(self):
-        self.att_Report = ""
-        self.att_Report+= f"{self.__index}. "
-        self.att_Report+= f"{self.__your_code} "
-        self.att_Report+= f"Black: {self.__black_stick} "
-        self.att_Report+= f"White: {self.__white_stick} "
-        self.att_Report+="\n"
-        return self.att_Report
 
 class MasterMind:
     def __init__(self, attempt=10, option=8, digit=5):
@@ -162,18 +154,15 @@ class MasterMind:
             f" The digit has one of the values : \n {self.__possible_values} \n"
         )
         MM_Report += "Digit values can be repeated. \n"
-        #only for tests!
-        MM_Report += "Only for tests! Remove, when completed!"
-        MM_Report += self.show_secret()
-
         MM_Report+="Attempts pool:\n"
         MM_Report+="***************************\n"
         for single_attempt in self.__attempts_pool:
             MM_Report+=repr(single_attempt)
         MM_Report += "***************************\n"
         MM_Report+="\n"
-        MM_Report+=f"Current attempt: {self.active_attempt()} \n"
-        MM_Report+=f"Rest attempts: {self.rest_attempt()}"
+        MM_Report+=f"Active attempt number: {self.active_attempt() + 1} \n"
+        MM_Report += f"Used attempts:: {len(self.__attempts_pool)} \n"
+        MM_Report+=f"Rest attempts: {self.rest_attempt()} \n \n"
         MM_Report += "  Game flags:  \n"
         MM_Report+="**************\n"
         MM_Report += f" Game status: {self.__game_status} \n"
@@ -224,7 +213,7 @@ match current_game:
         # the_game.show_secret()
         #print(the_game.list_of_values())
         #print(repr(the_game))
-
+        print(repr(the_game))
         while the_game.is_running():
             quess_code=input("Insert your code: ")
             single_attempt=the_game.next_attempt(quess_code)
