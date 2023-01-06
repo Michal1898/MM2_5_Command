@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 # import black
 game_options = {"ano": True, "ne": False, "yes": True, "no": False}
 next_game = "ano"
