@@ -66,8 +66,36 @@ class MasterMind:
             #evaluate attempt
             your_attempt=list(map(int, your_attempt.split()))
             print(your_attempt)
-            print(self.show_secret_list())
-            the_attempt=Attempt(self.__current_att, your_attempt, 3 , 1)
+            secret=self.show_secret_list()
+            print(secret)
+            digit_equal=[]
+            attemp_rest=[]
+            secret_rest=[]
+            for _ in range (0, len(secret)):
+                if secret[_] == your_attempt[_]:
+                    digit_equal.append(your_attempt[_])
+                else:
+                    attemp_rest.append(your_attempt[_])
+                    secret_rest.append(secret[_])
+            black_stick=len(digit_equal)
+
+            white_stick = 0
+            wrong_position= True
+            while wrong_position:
+                wrong_position=False
+                for digit in attemp_rest:
+                    if digit in secret_rest:
+                        attemp_rest.remove(digit)
+                        secret_rest.remove(digit)
+                        white_stick+=1
+                        wrong_position= True
+                        break
+
+
+
+            the_attempt=Attempt(self.__current_att, your_attempt, black_stick , white_stick)
+            self.__current_att+=1
+            self.__attempts_pool.append(the_attempt)
             return True, the_attempt
 
 
@@ -137,8 +165,11 @@ match current_game:
         # the_game.show_secret()
         # print(the_game.list_of_values())
         # print(repr(the_game))
-        single_attempt = the_game.next_attempt("1 2 3 4 5")
-        print([single_attempt])
+
+        for _ in range(0,100):
+            single_attempt=the_game.next_attempt("3 4 5 6 8")
+            print([single_attempt])
+
 
         the_attempt = Attempt(13, [1 ,2 ,3 ,8 ,111], 19, 7)
         print(the_attempt)
