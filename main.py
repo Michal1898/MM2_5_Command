@@ -50,22 +50,31 @@ class MasterMind:
     def show_secret(self):
         return f"Secret code is: {self.__secret_code} \n"
 
+    def show_secret_list(self):
+        return  self.__secret_code
+
     def list_of_values(self):
         return self.__possible_values
 
     def next_attempt(self, your_attempt ="0 0 0 0 0"):
         #self.__game_active=False
-        #self.__current_att=9
+        #self.__current_att=10
         if self.__game_active == False:
             return False, "Game is not active!"
 
         elif self.__current_att<self.__attempt:
+            #evaluate attempt
+            your_attempt=list(map(int, your_attempt.split()))
+            print(your_attempt)
+            print(self.show_secret_list())
             the_attempt=Attempt(self.__current_att, your_attempt, 3 , 1)
             return True, the_attempt
 
 
         else:
             return False, "You have not attempt available!"
+            # this case can't occur in fact.
+            # but better save than sorry.
 
     def __repr__(self):
         MM_Report = ""
@@ -127,11 +136,11 @@ match current_game:
         the_game = MasterMind()
         # the_game.show_secret()
         # print(the_game.list_of_values())
-        print(repr(the_game))
-        single_attempt = the_game.next_attempt([1, 2, 3, 4, 5])
-        print(single_attempt)
+        # print(repr(the_game))
+        single_attempt = the_game.next_attempt("1 2 3 4 5")
+        print([single_attempt])
 
-        the_attempt = Attempt(13, [1 ,2 ,3 ,3 ,2], 13, 7)
+        the_attempt = Attempt(13, [1 ,2 ,3 ,8 ,111], 19, 7)
         print(the_attempt)
         # the_attempt2 = Attempt("7 7 7 13 13 13", 17)
         # the_game = MasterMind(7,10,4)
