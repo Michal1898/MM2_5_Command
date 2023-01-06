@@ -154,10 +154,19 @@ class MasterMind:
             f" The digit has one of the values : \n {self.__possible_values} \n"
         )
         MM_Report += "Digit values can be repeated. \n"
+        if self.is_running() == False:
+            MM_Report +=40*"*"+"\n"
+            MM_Report+=self.show_secret()
+        MM_Report += 40 * "*" + "\n"
+
         MM_Report+="Attempts pool:\n"
         MM_Report+="***************************\n"
-        for single_attempt in self.__attempts_pool:
-            MM_Report+=repr(single_attempt)
+
+        if len(self.attempt_pool()):
+            for single_attempt in self.__attempts_pool:
+                MM_Report+=repr(single_attempt)
+        else:
+            MM_Report += "****** Pool is empty ******\n"
         MM_Report += "***************************\n"
         MM_Report+="\n"
         MM_Report+=f"Active attempt number: {self.active_attempt() + 1} \n"
