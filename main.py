@@ -1,4 +1,4 @@
-# import black
+import black
 game_options = {"ano": True, "ne": False, "yes": True, "no": False}
 next_game = "ano"
 code_values = [_ for _ in range(1, 9)]
@@ -128,7 +128,8 @@ class MasterMind:
             elif len(self.__attempts_pool) == self.__attempt:
                 self.__game_active = False
                 if self.__code_hacked == False:
-                    self.__game_status == "attempts_exhausted"
+                    print("not hacked")
+                    self.__game_status = "attempts_exhausted"
             else:
                 # this case can't occur,
                 # but better safe than sorry!
@@ -170,7 +171,7 @@ class MasterMind:
         MM_Report += "***************************\n"
         MM_Report+="\n"
         MM_Report+=f"Active attempt number: {self.active_attempt() + 1} \n"
-        MM_Report += f"Used attempts:: {len(self.__attempts_pool)} \n"
+        MM_Report += f"Used attempts: {len(self.__attempts_pool)} \n"
         MM_Report+=f"Rest attempts: {self.rest_attempt()} \n \n"
         MM_Report += "  Game flags:  \n"
         MM_Report+="**************\n"
@@ -228,7 +229,8 @@ match current_game:
             single_attempt=the_game.next_attempt(quess_code)
             print(repr(the_game))
             #print(the_game.attempt_pool())
-
+        print("Final report:")
+        print(repr(the_game))
 
         #the_attempt = Attempt(13, [1 ,2 ,3 ,8 ,111], 19, 7)
         #print(the_attempt)
