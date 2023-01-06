@@ -21,6 +21,15 @@ class Attempt:
         self.att_Report+="\n"
         return self.att_Report
 
+    def __self__(self):
+        self.att_Report = ""
+        self.att_Report+= f"{self.__index}. "
+        self.att_Report+= f"{self.__your_code} "
+        self.att_Report+= f"Black: {self.__black_stick} "
+        self.att_Report+= f"White: {self.__white_stick} "
+        self.att_Report+="\n"
+        return self.att_Report
+
 class MasterMind:
     def __init__(self, attempt=10, option=8, digit=5):
         import uuid
@@ -75,17 +84,13 @@ class MasterMind:
 
 
     def next_attempt(self, your_attempt ="0 0 0 0 0"):
-        #self.__game_active=False
-        #self.__current_att=10
         if self.__game_active == False:
             return False, "Game is not active!"
 
         elif self.__current_att<self.__attempt:
             #evaluate attempt
             your_attempt=list(map(int, your_attempt.split()))
-            print(your_attempt)
             secret=self.show_secret_list()
-            print(secret)
             digit_equal=[]
             attemp_rest=[]
             secret_rest=[]
@@ -147,7 +152,9 @@ class MasterMind:
 
     def __repr__(self):
         MM_Report = ""
+        MM_Report += " *************\n"
         MM_Report += " * L O G I C * \n"
+        MM_Report += " *************\n"
         MM_Report += f"Game ID: {self.__game_id} \n"
         MM_Report += f" Number of attempts: {self.__attempt} \n"
         MM_Report += f" Number of digits in quesed code: {self.__digit} \n"
@@ -155,9 +162,20 @@ class MasterMind:
             f" The digit has one of the values : \n {self.__possible_values} \n"
         )
         MM_Report += "Digit values can be repeated. \n"
+        #only for tests!
         MM_Report += "Only for tests! Remove, when completed!"
         MM_Report += self.show_secret()
-        MM_Report += " Game flags: \n"
+
+        MM_Report+="Attempts pool:\n"
+        MM_Report+="***************************\n"
+        for single_attempt in self.__attempts_pool:
+            MM_Report+=repr(single_attempt)
+        MM_Report += "***************************\n"
+        MM_Report+="\n"
+        MM_Report+=f"Current attempt: {self.active_attempt()} \n"
+        MM_Report+=f"Rest attempts: {self.rest_attempt()}"
+        MM_Report += "  Game flags:  \n"
+        MM_Report+="**************\n"
         MM_Report += f" Game status: {self.__game_status} \n"
         if self.__game_active:
             MM_Report += "You are in the game. \n"
@@ -211,7 +229,7 @@ match current_game:
             quess_code=input("Insert your code: ")
             single_attempt=the_game.next_attempt(quess_code)
             print(repr(the_game))
-            print(the_game.attempt_pool())
+            #print(the_game.attempt_pool())
 
 
         #the_attempt = Attempt(13, [1 ,2 ,3 ,8 ,111], 19, 7)
