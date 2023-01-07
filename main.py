@@ -135,9 +135,10 @@ class MasterMind:
             return True, the_attempt
 
         else:
-            return False, "You have not attempt available!"
             # this case can't occur in fact.
             # but better save than sorry.
+            return False, "You have not attempt available!"
+
 
     def __repr__(self):
         MM_Report = ""
@@ -173,16 +174,16 @@ class MasterMind:
         MM_Report += "**************\n"
         MM_Report += f" Game status: {self.__game_status} \n"
         if self.__game_active:
-            MM_Report += "You are in the game. \n"
+            MM_Report += " You are in the game. \n"
 
             if self.__all_values_OK:
                 MM_Report += (
-                    "You just guessed all the numbers. You are close to the goal! \n"
+                    " You just guessed all the numbers. You are close to the goal! \n"
                 )
             else:
-                MM_Report += "Keep on! \n"
+                MM_Report += " Keep on! \n"
         else:
-            MM_Report += "Game is over! \n"
+            MM_Report += " Game is over! \n"
 
             if self.__code_hacked:
                 MM_Report += "You hacked the secret! I congratulate you! \n"
@@ -214,7 +215,7 @@ match current_game:
         # the_game.show_secret()
         # print(the_game.list_of_values())
 
-        the_game = MasterMind()
+        the_game = MasterMind(12, 6, 4)
         # the_game.show_secret()
         # print(the_game.list_of_values())
         # print(repr(the_game))
@@ -226,6 +227,15 @@ match current_game:
             # print(the_game.attempt_pool())
         print("Final report:")
         print(repr(the_game))
+
+        # Save game to the file:
+        print("I will save finished game to the file.")
+        with open('data/mm_games.txt', 'a') as f:
+            f.write("Final report: \n")
+            f.write(repr(the_game))
+            f.write("-" * 50)
+            f.write("\n")
+        print("Game was saved.")
 
         # the_attempt = Attempt(13, [1 ,2 ,3 ,8 ,111], 19, 7)
         # print(the_attempt)
@@ -250,9 +260,5 @@ match current_game:
 
 print(current_game)
 
-# quit game?
-# next_game = str.lower((input("Dalsi kolo? (Ano/Ne) ")))
-# print(next_game)
-
-
 print("Game over!")
+
