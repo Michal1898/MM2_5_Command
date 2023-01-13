@@ -1,15 +1,20 @@
+import datetime
+
 game_options = {"ano": True, "ne": False, "yes": True, "no": False}
 next_game = "ano"
 code_values = [_ for _ in range(1, 9)]
 
 
 class Attempt:
-    def __init__(self, att_no, your_code=[], white=0, black=0):
+    def __init__(
+        self, att_no, your_code=[], white=0, black=0, duration=datetime.time(0)
+    ):
 
         self.__index = att_no
         self.__your_code = your_code
         self.__black_stick = white
         self.__white_stick = black
+        self.__attempt_time = duration
 
     def __repr__(self):
         self.att_Report = ""
@@ -17,11 +22,42 @@ class Attempt:
         self.att_Report += f"{self.__your_code} "
         self.att_Report += f"Black: {self.__black_stick} "
         self.att_Report += f"White: {self.__white_stick} "
+        self.att_Report += f"Time: {self.__attempt_time} "
         self.att_Report += "\n"
         return self.att_Report
 
 
 class MasterMind:
+    # this Dictionary return limits for:
+    # - no of attempts
+    # - no of digits
+    # - possible values counts
+
+    def game_start(self):
+        start_time = self.__date_of_the_game.time()
+        return start_time
+
+    def game_date(self):
+        game_date = self.__date_of_the_game.date()
+        return game_date
+
+    def game_duration(self):
+        game_duration = time.time() - self.__start_time
+        return game_duration
+
+    def __limits__(self, limit_name=" "):
+        self.__the_outer_limits = {
+            "MIN_ATTEMPT": 2,
+            "MAX_ATTEMPT": 50,
+            "MIN_DIGIT": 1,
+            "MAX_DIGIT": 10,
+            "MIN_VALUES": 2,
+            "MAX_VALUES": 10,
+        }
+        limit_value = self.__the_outer_limits.get(limit_name, False)
+        print(limit_value)
+        return limit_value
+
     def __init__(self, attempt=10, option=8, digit=5):
         import uuid
         from random import choices
@@ -30,6 +66,15 @@ class MasterMind:
         self.__attempt = attempt
         self.__option = option
         self.__digit = digit
+
+        # check, if parameter of the class are in allowed limits.
+        print(attempt)
+        if attempt < self.__limits__("MIN_ATTEMPT") or attempt >= self.__limits__(
+            "MAX_ATTEMPT"
+        ):
+            error_message = "Count of attempts out of range!"
+            print(error_message)
+            return None
 
         self.__game_id = str(uuid.uuid4())
         self.__possible_values = [_ for _ in range(1, self.__option + 1)]
@@ -43,7 +88,9 @@ class MasterMind:
         self.__all_attempts_exhausted = False
 
         self.__attempts_pool = []
-
+        self.__date_of_the_game = datetime.datetime.now()
+        self.__start_time = datetime.datetime.now()
+        self.__temp_time = self.__start_time
         print(f"Created new game with ID {self.__game_id}")
         print(f"Good luck")
 
@@ -78,6 +125,9 @@ class MasterMind:
 
         elif self.__current_att < self.__attempt:
             # evaluate attempt
+            attemp_time = datetime.datetime.now() - self.__temp_time
+            self.__temp_time = datetime.datetime.now()
+
             your_attempt = list(map(int, your_attempt.split()))
             secret = self.show_secret_list()
             digit_equal = []
@@ -104,7 +154,7 @@ class MasterMind:
                         break
 
             the_attempt = Attempt(
-                self.__current_att, your_attempt, black_stick, white_stick
+                self.__current_att, your_attempt, black_stick, white_stick, attemp_time
             )
             self.__current_att += 1
             self.__attempts_pool.append(the_attempt)
@@ -139,13 +189,14 @@ class MasterMind:
             # but better save than sorry.
             return False, "You have not attempt available!"
 
-
     def __repr__(self):
         MM_Report = ""
         MM_Report += " *************\n"
         MM_Report += " * L O G I C * \n"
         MM_Report += " *************\n"
         MM_Report += f"Game ID: {self.__game_id} \n"
+        MM_Report += f"Date: {self.game_date()} \n"
+        MM_Report += f"Game started at: {self.game_start() } \n"
         MM_Report += f" Number of attempts: {self.__attempt} \n"
         MM_Report += f" Number of digits in quesed code: {self.__digit} \n"
         MM_Report += (
@@ -190,7 +241,7 @@ class MasterMind:
             elif self.__all_values_OK:
                 MM_Report += "You guessed all the numbers. Unfortunately, the sequence is wrong! \n"
             else:
-                MM_Report += "You are looser!"
+                MM_Report += "You are looser! \n"
 
         # print(MM_Report)
         return MM_Report
@@ -215,7 +266,7 @@ match current_game:
         # the_game.show_secret()
         # print(the_game.list_of_values())
 
-        the_game = MasterMind(12, 6, 4)
+        the_game = MasterMind(10, 8, 5)
         # the_game.show_secret()
         # print(the_game.list_of_values())
         # print(repr(the_game))
@@ -230,7 +281,7 @@ match current_game:
 
         # Save game to the file:
         print("I will save finished game to the file.")
-        with open('data/mm_games.txt', 'a') as f:
+        with open("data/mm_games.txt", "a") as f:
             f.write("Final report: \n")
             f.write(repr(the_game))
             f.write("-" * 50)
@@ -261,4 +312,3 @@ match current_game:
 print(current_game)
 
 print("Game over!")
-

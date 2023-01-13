@@ -111,3 +111,604 @@ Rest attempts: 0
  Game is over! 
 You guessed all the numbers. Unfortunately, the sequence is wrong! 
 --------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 1241b34d-5cab-4d4b-8611-f6564316212d 
+ Number of attempts: 12 
+ Number of digits in quesed code: 4 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [4, 5, 3, 5] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1] Black: 0 White: 0 
+2. [2, 2, 2, 2] Black: 0 White: 0 
+3. [3, 3, 3, 3] Black: 1 White: 0 
+4. [3, 4, 4, 4] Black: 0 White: 2 
+5. [4, 3, 5, 5] Black: 2 White: 2 
+6. [3, 5, 5, 4] Black: 1 White: 3 
+7. [5, 3, 4, 5] Black: 1 White: 3 
+8. [4, 5, 3, 5] Black: 4 White: 0 
+***************************
+
+Active attempt number: 9 
+Used attempts: 8 
+Rest attempts: 4 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: f99fce05-dd7d-4933-83dc-f577c47896d4 
+ Number of attempts: 12 
+ Number of digits in quesed code: 4 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [6, 6, 1, 5] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1] Black: 1 White: 0 
+2. [1, 2, 2, 2] Black: 0 White: 1 
+3. [3, 1, 3, 3] Black: 0 White: 1 
+4. [4, 4, 1, 4] Black: 1 White: 0 
+5. [5, 5, 5, 1] Black: 0 White: 2 
+6. [6, 6, 1, 5] Black: 4 White: 0 
+***************************
+
+Active attempt number: 7 
+Used attempts: 6 
+Rest attempts: 6 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: facd1871-8ec1-4b19-8584-2ceb8dd3cad8 
+ Number of attempts: 15 
+ Number of digits in quesed code: 10 
+ The digit has one of the values : 
+ [1, 2] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [2, 2, 2, 2, 1, 2, 2, 2, 2, 2] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1, 2, 2, 2, 2, 2] Black: 6 White: 0 
+2. [2, 2, 2, 2, 2, 2, 2, 2, 2, 2] Black: 9 White: 0 
+3. [1, 2, 2, 2, 2, 2, 2, 2, 2, 2] Black: 8 White: 2 
+4. [2, 1, 2, 2, 2, 2, 2, 2, 2, 2] Black: 8 White: 2 
+5. [2, 2, 1, 2, 2, 2, 2, 2, 2, 2] Black: 8 White: 2 
+6. [2, 2, 2, 1, 2, 2, 2, 2, 2, 2] Black: 8 White: 2 
+7. [2, 2, 2, 2, 1, 2, 2, 2, 2, 2] Black: 10 White: 0 
+***************************
+
+Active attempt number: 8 
+Used attempts: 7 
+Rest attempts: 8 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 8f77ea1a-eb44-4e7e-8e31-66bff66846e4 
+ Number of attempts: 20 
+ Number of digits in quesed code: 4 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [6, 6, 6, 6] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1] Black: 0 White: 0 
+2. [2, 2, 2, 2] Black: 0 White: 0 
+3. [6, 6, 6, 6] Black: 4 White: 0 
+***************************
+
+Active attempt number: 4 
+Used attempts: 3 
+Rest attempts: 17 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 83453598-62c6-4d1f-af66-4cc632976920 
+ Number of attempts: 20 
+ Number of digits in quesed code: 4 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [6, 1, 2, 2] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1] Black: 1 White: 0 
+2. [1, 2, 2, 2] Black: 2 White: 1 
+3. [2, 1, 2, 3] Black: 2 White: 1 
+4. [2, 2, 1, 4] Black: 0 White: 3 
+5. [2, 2, 5, 1] Black: 0 White: 3 
+6. [1, 6, 2, 2] Black: 2 White: 2 
+7. [1, 2, 2, 6] Black: 1 White: 3 
+8. [2, 6, 2, 1] Black: 1 White: 3 
+9. [6, 2, 2, 1] Black: 2 White: 2 
+10. [6, 1, 2, 2] Black: 4 White: 0 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 10 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: d2564f61-f46f-47c4-bc6b-496b795421c6 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Attempts pool:
+***************************
+****** Pool is empty ******
+***************************
+
+Active attempt number: 1 
+Used attempts: 0 
+Rest attempts: 10 
+ 
+  Game flags:  
+**************
+ Game status: running 
+ You are in the game. 
+ Keep on! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 52380b00-d0d1-406d-9ec1-8d3b69b051a7 
+ Number of attempts: 11 
+ Number of digits in quesed code: 4 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6] 
+Digit values can be repeated. 
+****************************************
+Attempts pool:
+***************************
+****** Pool is empty ******
+***************************
+
+Active attempt number: 1 
+Used attempts: 0 
+Rest attempts: 11 
+ 
+  Game flags:  
+**************
+ Game status: running 
+ You are in the game. 
+ Keep on! 
+--------------------------------------------------
+Final report: 
+Final report: 
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 5d91a67d-8493-4e28-ae5e-5d4f58e19f5e 
+ Number of attempts: 7 
+ Number of digits in quesed code: 4 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6] 
+Digit values can be repeated. 
+****************************************
+Attempts pool:
+***************************
+****** Pool is empty ******
+***************************
+
+Active attempt number: 1 
+Used attempts: 0 
+Rest attempts: 7 
+ 
+  Game flags:  
+**************
+ Game status: running 
+ You are in the game. 
+ Keep on! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: f1efb5ac-7900-4455-9b9a-2ff23ef0d049 
+ Number of attempts: 7 
+ Number of digits in quesed code: 4 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [3, 3, 3, 3] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1] Black: 0 White: 0 
+2. [2, 2, 2, 2] Black: 0 White: 0 
+3. [6, 6, 6, 6] Black: 0 White: 0 
+4. [5, 5, 5, 5] Black: 0 White: 0 
+5. [3, 3, 3, 3] Black: 4 White: 0 
+***************************
+
+Active attempt number: 6 
+Used attempts: 5 
+Rest attempts: 2 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 9bb102f9-a184-4c77-874c-260e39cf7515 
+ Number of attempts: 7 
+ Number of digits in quesed code: 4 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [6, 4, 5, 5] 
+****************************************
+Attempts pool:
+***************************
+1. [6, 6, 6, 6] Black: 1 White: 0 
+2. [6, 5, 5, 5] Black: 3 White: 0 
+3. [6, 5, 5, 4] Black: 2 White: 2 
+4. [6, 4, 5, 5] Black: 4 White: 0 
+***************************
+
+Active attempt number: 5 
+Used attempts: 4 
+Rest attempts: 3 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: a77e2c3a-2c83-433d-89bb-a59372d1e79a 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [1, 4, 7, 4, 5] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 2, 3, 4, 5] Black: 3 White: 0 
+2. [1, 2, 3, 6, 6] Black: 1 White: 0 
+3. [2, 3, 4, 5, 6] Black: 0 White: 2 
+4. [3, 4, 5, 6, 7] Black: 1 White: 2 
+5. [6, 6, 3, 4, 5] Black: 2 White: 0 
+6. [1, 8, 3, 8, 5] Black: 2 White: 0 
+7. [1, 7, 3, 4, 7] Black: 2 White: 1 
+8. [1, 2, 3, 4, 8] Black: 2 White: 0 
+9. [7, 2, 3, 7, 5] Black: 1 White: 1 
+10. [7, 7, 7, 7, 7] Black: 1 White: 0 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 0 
+ 
+  Game flags:  
+**************
+ Game status: attempts_exhausted 
+ Game is over! 
+You are looser!--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 5e6c3e5c-bafc-4f90-871c-dac85c548c65 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [3, 3, 5, 6, 6] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 0 White: 0 
+2. [2, 2, 2, 2, 2] Black: 0 White: 0 
+3. [3, 3, 3, 3, 3] Black: 2 White: 0 
+4. [3, 3, 4, 4, 4] Black: 2 White: 0 
+5. [3, 3, 5, 5, 5] Black: 3 White: 0 
+6. [3, 3, 5, 6, 6] Black: 5 White: 0 
+***************************
+
+Active attempt number: 7 
+Used attempts: 6 
+Rest attempts: 4 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 7c1e40f0-ef86-4c9a-bdd5-d7b4228a3111 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [8, 8, 6, 2, 8] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 0 White: 0 
+2. [1, 1, 1, 1, 1] Black: 0 White: 0 
+3. [1, 1, 1, 1, 1] Black: 0 White: 0 
+4. [1, 1, 1, 1, 1] Black: 0 White: 0 
+5. [1, 1, 1, 1, 1] Black: 0 White: 0 
+6. [1, 1, 1, 1, 1] Black: 0 White: 0 
+7. [1, 1, 1, 1, 1] Black: 0 White: 0 
+8. [1, 1, 1, 1, 1] Black: 0 White: 0 
+9. [1, 1, 1, 1, 1] Black: 0 White: 0 
+10. [1, 1, 1, 1, 1] Black: 0 White: 0 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 0 
+ 
+  Game flags:  
+**************
+ Game status: attempts_exhausted 
+ Game is over! 
+You are looser! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: f945cbb3-014c-4da8-a500-f96c23c75127 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [4, 6, 4, 1, 8] 
+****************************************
+Attempts pool:
+***************************
+1. [8, 8, 8, 8, 8] Black: 1 White: 0 
+2. [7, 7, 7, 7, 8] Black: 1 White: 0 
+3. [6, 6, 6, 6, 8] Black: 2 White: 0 
+4. [5, 5, 5, 6, 8] Black: 1 White: 1 
+5. [4, 4, 6, 4, 8] Black: 2 White: 2 
+6. [3, 6, 4, 4, 8] Black: 3 White: 1 
+7. [6, 2, 4, 4, 8] Black: 2 White: 2 
+8. [1, 6, 4, 4, 8] Black: 3 White: 2 
+9. [4, 6, 1, 4, 8] Black: 3 White: 2 
+10. [4, 6, 4, 1, 8] Black: 5 White: 0 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 0 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 25dde663-d47f-4779-b469-f270f08abba8 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [1, 6, 4, 6, 3] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 1 White: 0 
+2. [2, 2, 2, 2, 1] Black: 0 White: 1 
+3. [1, 3, 3, 3, 3] Black: 2 White: 0 
+4. [1, 3, 8, 8, 8] Black: 1 White: 1 
+5. [1, 7, 3, 7, 7] Black: 1 White: 1 
+6. [1, 6, 6, 3, 6] Black: 2 White: 2 
+7. [1, 5, 6, 6, 3] Black: 3 White: 1 
+8. [1, 4, 5, 6, 3] Black: 3 White: 1 
+9. [1, 4, 6, 6, 3] Black: 3 White: 2 
+10. [1, 6, 4, 6, 3] Black: 5 White: 0 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 0 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 7a163626-94ad-4068-8f4f-f48c99a6f895 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [2, 5, 6, 3, 5] 
+****************************************
+Attempts pool:
+***************************
+1. [8, 8, 8, 8, 8] Black: 0 White: 0 
+2. [7, 7, 7, 7, 7] Black: 0 White: 0 
+3. [6, 6, 6, 6, 6] Black: 1 White: 0 
+4. [6, 5, 5, 5, 5] Black: 2 White: 1 
+5. [4, 4, 6, 5, 5] Black: 2 White: 1 
+6. [3, 3, 5, 6, 5] Black: 1 White: 3 
+7. [6, 2, 3, 5, 5] Black: 1 White: 4 
+8. [2, 5, 6, 5, 3] Black: 3 White: 2 
+9. [3, 5, 6, 5, 2] Black: 2 White: 3 
+10. [2, 5, 5, 6, 3] Black: 2 White: 3 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 0 
+ 
+  Game flags:  
+**************
+ Game status: attempts_exhausted 
+ Game is over! 
+You guessed all the numbers. Unfortunately, the sequence is wrong! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 1ad425a6-a757-4fb5-b998-b1ea0dbfa85c 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [6, 7, 8, 2, 1] 
+****************************************
+Attempts pool:
+***************************
+1. [8, 8, 8, 8, 8] Black: 1 White: 0 
+2. [7, 7, 7, 7, 8] Black: 1 White: 1 
+3. [6, 6, 6, 8, 7] Black: 1 White: 2 
+4. [5, 6, 7, 8, 1, 1] Black: 1 White: 3 
+5. [8, 7, 6, 5, 5] Black: 1 White: 2 
+6. [8, 7, 1, 1, 6] Black: 1 White: 3 
+7. [2, 1, 6, 7, 8] Black: 0 White: 5 
+8. [1, 2, 8, 6, 7] Black: 1 White: 4 
+9. [1, 8, 6, 2, 7] Black: 1 White: 4 
+10. [1, 7, 8, 2, 6] Black: 3 White: 2 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 0 
+ 
+  Game flags:  
+**************
+ Game status: attempts_exhausted 
+ Game is over! 
+You guessed all the numbers. Unfortunately, the sequence is wrong! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 8d5ff8fc-b55f-4336-8841-8c25ff1b0773 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [4, 4, 2, 2, 2] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 0 White: 0 
+2. [8, 8, 8, 8, 8] Black: 0 White: 0 
+3. [7, 7, 7, 7, 7] Black: 0 White: 0 
+4. [6, 6, 6, 6, 6] Black: 0 White: 0 
+5. [5, 5, 5, 5, 5] Black: 0 White: 0 
+6. [4, 4, 4, 4, 4] Black: 2 White: 0 
+7. [4, 4, 3, 3, 3] Black: 2 White: 0 
+8. [4, 4, 2, 2, 2] Black: 5 White: 0 
+***************************
+
+Active attempt number: 9 
+Used attempts: 8 
+Rest attempts: 2 
+ 
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
