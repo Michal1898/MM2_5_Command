@@ -28,10 +28,20 @@ class Attempt:
 
 
 class MasterMind:
-    # this Dictionary return limits for:
-    # - no of attempts
-    # - no of digits
-    # - possible values counts
+    # Set time limit for the game
+    # h ... hours
+    # m ... minutes
+    # s ... seconds
+    def set_time_for_game(self, h=1, m = 3, s = 59):
+        #in this case is time set for:
+        # 1 hour,
+         # 3 minutes
+         # and 59 seconds
+        self.__TIME_FOR_GAME=datetime.timedelta(days=0, hours=h, minutes=m, seconds=s)
+        return True, self.__TIME_FOR_GAME
+
+    def return_time_for_game(self):
+        return self.__TIME_FOR_GAME
 
     def game_start(self):
         start_time = self.__date_of_the_game.time()
@@ -42,9 +52,12 @@ class MasterMind:
         return game_date
 
     def game_duration(self):
-        game_duration = time.time() - self.__start_time
+        game_duration = datetime.datetime.now() - self.__start_time
         return game_duration
-
+    # this Dictionary return limits for:
+    # - no of attempts
+    # - no of digits
+    # - possible values counts
     def __limits__(self, limit_name=" "):
         self.__the_outer_limits = {
             "MIN_ATTEMPT": 2,
@@ -57,6 +70,23 @@ class MasterMind:
         limit_value = self.__the_outer_limits.get(limit_name, False)
         print(limit_value)
         return limit_value
+
+    def check_time_to_left(self):
+        if self.__game_active:
+            if self.game_duration()>self.return_time_for_game():
+                print("You exceeded time limit for game!")
+                self.__game_active = False
+                self.__game_status = "time_exceeded"
+                self.__time_left = True
+        return self.__time_left
+
+    def return_rest_time(self):
+        rest_time = self.return_time_for_game() - self.game_duration()
+        if rest_time.days < 0:
+            return datetime.timedelta(seconds=0)
+        else:
+            return rest_time
+
 
     def __init__(self, attempt=10, option=8, digit=5):
         import uuid
@@ -88,6 +118,8 @@ class MasterMind:
         self.__all_attempts_exhausted = False
 
         self.__attempts_pool = []
+
+        self.set_time_for_game(1 , 1 , 59)
         self.__date_of_the_game = datetime.datetime.now()
         self.__start_time = datetime.datetime.now()
         self.__temp_time = self.__start_time
@@ -120,6 +152,7 @@ class MasterMind:
         return self.__attempts_pool
 
     def next_attempt(self, your_attempt="0 0 0 0 0"):
+        self.check_time_to_left()
         if self.__game_active == False:
             return False, "Game is not active!"
 
@@ -190,6 +223,7 @@ class MasterMind:
             return False, "You have not attempt available!"
 
     def __repr__(self):
+        self.check_time_to_left()
         MM_Report = ""
         MM_Report += " *************\n"
         MM_Report += " * L O G I C * \n"
@@ -221,6 +255,11 @@ class MasterMind:
         MM_Report += f"Active attempt number: {self.active_attempt() + 1} \n"
         MM_Report += f"Used attempts: {len(self.__attempts_pool)} \n"
         MM_Report += f"Rest attempts: {self.rest_attempt()} \n \n"
+
+        MM_Report += f"Time for play: {self.return_time_for_game()} \n"
+        MM_Report += f"Time left: {self.game_duration() } \n"
+        MM_Report += f"Time rest: {self.return_rest_time() } \n"
+        MM_Report += "\n"
         MM_Report += "  Game flags:  \n"
         MM_Report += "**************\n"
         MM_Report += f" Game status: {self.__game_status} \n"
@@ -235,6 +274,11 @@ class MasterMind:
                 MM_Report += " Keep on! \n"
         else:
             MM_Report += " Game is over! \n"
+
+        if self.__time_left:
+            MM_Report += (
+                " You exceeded time limit! \n"
+            )
 
             if self.__code_hacked:
                 MM_Report += "You hacked the secret! I congratulate you! \n"
