@@ -153,7 +153,7 @@ class MasterMind:
 
         self.__attempts_pool = []
 
-        self.set_time_for_game(0, 2, 5)
+        self.set_time_for_game(1, 0, 0)
         self.__date_of_the_game = datetime.datetime.now()
         self.__start_time = datetime.datetime.now()
         self.__temp_time = self.__start_time
