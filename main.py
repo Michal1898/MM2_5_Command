@@ -32,12 +32,12 @@ class MasterMind:
     # h ... hours
     # m ... minutes
     # s ... seconds
-    def set_time_for_game(self, h=1, m = 3, s = 59):
-        #in this case is time set for:
+    def set_time_for_game(self, h=1, m=3, s=59):
+        # in this case is time set for:
         # 1 hour,
-         # 3 minutes
-         # and 59 seconds
-        self.__TIME_FOR_GAME=datetime.timedelta(days=0, hours=h, minutes=m, seconds=s)
+        # 3 minutes
+        # and 59 seconds
+        self.__TIME_FOR_GAME = datetime.timedelta(days=0, hours=h, minutes=m, seconds=s)
         return True, self.__TIME_FOR_GAME
 
     def return_time_for_game(self):
@@ -54,6 +54,7 @@ class MasterMind:
     def game_duration(self):
         game_duration = datetime.datetime.now() - self.__start_time
         return game_duration
+
     # this Dictionary return limits for:
     # - no of attempts
     # - no of digits
@@ -65,26 +66,24 @@ class MasterMind:
             "DIGIT_MIN": 1,
             "DIGIT_MAX": 10,
             "VALUES_MIN": 2,
-            "VALUES_MAX": 10
+            "VALUES_MAX": 16,
         }
         limit_value = self.__the_outer_limits.get(limit_name, False)
         return limit_value
 
     def return_outer_limits(self):
-        outer_limits=""
-        outer_limits+="All limits must be interges! \n"
-        outer_limits+="All limits must be positive! \n"
-        outer_limits+= f"Count of attempts must be in range: {self.limits('ATTEMPT_MIN')} - {self.limits('ATTEMPT_MAX')}.\n"
-        outer_limits+= f"Count of each digits must be in range: {self.limits('DIGIT_MIN')} - {self.limits('DIGIT_MAX')}. \n"
-        outer_limits+= f"Value of each digit must be in range: {self.limits('VALUES_MIN')} - {self.limits('VALUES_MAX')}.\n"
-        outer_limits+= f"{self.limits()} \n"
+        outer_limits = ""
+        outer_limits += "All limits must be integers! \n"
+        outer_limits += "All limits must be positive! \n"
+        outer_limits += f"Count of attempts must be in range: {self.limits('ATTEMPT_MIN')} - {self.limits('ATTEMPT_MAX')}.\n"
+        outer_limits += f"Count of digits must be in range: {self.limits('DIGIT_MIN')} - {self.limits('DIGIT_MAX')}. \n"
+        outer_limits += f"Values for each digit must be in range: {self.limits('VALUES_MIN')} - {self.limits('VALUES_MAX')}.\n"
+        outer_limits += f"{self.limits()} \n"
         return outer_limits
-
-
 
     def check_time_to_left(self):
         if self.__game_active:
-            if self.game_duration()>self.return_time_for_game():
+            if self.game_duration() > self.return_time_for_game():
                 print("You exceeded time limit for game!")
                 self.__game_active = False
                 self.__game_status = "time_exceeded"
@@ -98,7 +97,6 @@ class MasterMind:
         else:
             return rest_time
 
-
     def __init__(self, attempt=10, option=8, digit=5):
         import uuid
         from random import choices
@@ -107,8 +105,6 @@ class MasterMind:
         self.__attempt = attempt
         self.__option = option
         self.__digit = digit
-
-
 
         # check, if parameter of the class are in allowed limits.
         # print(attempt)
@@ -132,7 +128,7 @@ class MasterMind:
 
         self.__attempts_pool = []
 
-        self.set_time_for_game(1 , 1 , 59)
+        self.set_time_for_game(1, 1, 59)
         self.__date_of_the_game = datetime.datetime.now()
         self.__start_time = datetime.datetime.now()
         self.__temp_time = self.__start_time
@@ -289,9 +285,7 @@ class MasterMind:
             MM_Report += " Game is over! \n"
 
         if self.__time_left:
-            MM_Report += (
-                " You exceeded time limit! \n"
-            )
+            MM_Report += " You exceeded time limit! \n"
 
             if self.__code_hacked:
                 MM_Report += "You hacked the secret! I congratulate you! \n"
@@ -324,7 +318,7 @@ match current_game:
         # print(the_game.list_of_values())
 
         the_game = MasterMind(10, 8, 5)
-        limits=the_game.return_outer_limits()
+        limits = the_game.return_outer_limits()
         print(limits)
         # the_game.show_secret()
         # print(the_game.list_of_values())
