@@ -2,8 +2,10 @@ import datetime
 
 game_options = {"ano": True, "ne": False, "yes": True, "no": False}
 
+
 class CustomException(Exception):
     pass
+
 
 class Attempt:
     def __init__(
@@ -105,12 +107,20 @@ class MasterMind:
 
         print("Test of the input parameters \n")
         # check, if all parameter of the class are in allowed limits.
-        error_message=False
-        if isinstance(attempt, int) and isinstance(option, int) and isinstance(digit, int):
-            if attempt < self.limits("ATTEMPT_MIN") or attempt > self.limits("ATTEMPT_MAX"):
+        error_message = False
+        if (
+            isinstance(attempt, int)
+            and isinstance(option, int)
+            and isinstance(digit, int)
+        ):
+            if attempt < self.limits("ATTEMPT_MIN") or attempt > self.limits(
+                "ATTEMPT_MAX"
+            ):
                 error_message = "Count of attempts out of range!"
 
-            elif option < self.limits("VALUES_MIN") or option > self.limits("VALUES_MAX"):
+            elif option < self.limits("VALUES_MIN") or option > self.limits(
+                "VALUES_MAX"
+            ):
                 error_message = "Count of options out of range!"
             elif digit < self.limits("DIGIT_MIN") or digit > self.limits("DIGIT_MAX"):
                 error_message = "Count of digits out of range!"
@@ -189,23 +199,23 @@ class MasterMind:
             secret = self.show_secret_list()
             your_attempt = your_attempt.split()
             if len(your_attempt) != len(secret):
-                attempt_error="Wrong number of digits!"
+                attempt_error = "Wrong number of digits!"
             else:
                 for digit in your_attempt:
                     if digit.isdigit():
                         digit = int(digit)
                         if digit not in self.list_of_values():
-                            attempt_error="Value out of range!"
+                            attempt_error = "Value out of range!"
                             break
 
                     else:
-                        attempt_error="Digit must be positive integer!"
+                        attempt_error = "Digit must be positive integer!"
                         break
 
             if attempt_error:
                 return False, attempt_error
             else:
-                    # inserted ccode is valid
+                # inserted ccode is valid
                 your_attempt = list(map(int, your_attempt))
                 digit_equal = []
                 attemp_rest = []
@@ -231,7 +241,11 @@ class MasterMind:
                             break
 
                 the_attempt = Attempt(
-                    self.__current_att, your_attempt, black_stick, white_stick, attemp_time
+                    self.__current_att,
+                    your_attempt,
+                    black_stick,
+                    white_stick,
+                    attemp_time,
                 )
                 self.__current_att += 1
                 self.__attempts_pool.append(the_attempt)
@@ -332,9 +346,7 @@ class MasterMind:
         return MM_Report
 
 
-
-
-the_game = MasterMind(10,8,5)
+the_game = MasterMind(10, 8, 5)
 
 print(repr(the_game))
 while the_game.is_running():
@@ -356,7 +368,6 @@ with open("data/mm_games.txt", "a") as f:
     f.write("-" * 50)
     f.write("\n")
 print("Game was saved.")
-
 
 
 print("Game over!")
