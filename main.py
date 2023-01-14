@@ -187,61 +187,82 @@ class MasterMind:
             attemp_time = datetime.datetime.now() - self.__temp_time
             self.__temp_time = datetime.datetime.now()
 
-            your_attempt = list(map(int, your_attempt.split()))
+            # check if valid code was inserted
+            attempt_error = False
             secret = self.show_secret_list()
-            digit_equal = []
-            attemp_rest = []
-            secret_rest = []
-            for _ in range(0, len(secret)):
-                if secret[_] == your_attempt[_]:
-                    digit_equal.append(your_attempt[_])
-                else:
-                    attemp_rest.append(your_attempt[_])
-                    secret_rest.append(secret[_])
-            black_stick = len(digit_equal)
+            your_attempt = your_attempt.split()
+            if len(your_attempt) != len(secret):
+                attempt_error="Wrong number of digits!"
+            else:
+                for digit in your_attempt:
+                    if digit.isdigit():
+                        digit = int(digit)
+                        if digit not in self.list_of_values():
+                            attempt_error="Value out of range!"
+                            break
 
-            white_stick = 0
-            wrong_position = True
-            while wrong_position:
-                wrong_position = False
-                for digit in attemp_rest:
-                    if digit in secret_rest:
-                        attemp_rest.remove(digit)
-                        secret_rest.remove(digit)
-                        white_stick += 1
-                        wrong_position = True
+                    else:
+                        attempt_error="Digit must be positive integer!"
                         break
 
-            the_attempt = Attempt(
-                self.__current_att, your_attempt, black_stick, white_stick, attemp_time
-            )
-            self.__current_att += 1
-            self.__attempts_pool.append(the_attempt)
-
-            # Update status of the current game
-            if white_stick + black_stick == len(secret):
-                self.__all_values_OK = True
-                print("Congratulate, you quessed all Values!")
-
-            if black_stick == len(secret):
-                print("Congratulate, you hacked the secret!")
-                self.__code_hacked = True
-                self.__game_active = False
-                self.__game_status = "code_hacked"
-
-            if len(self.__attempts_pool) < self.__attempt:
-                pass
-            elif len(self.__attempts_pool) == self.__attempt:
-                self.__game_active = False
-                if self.__code_hacked == False:
-                    print("not hacked")
-                    self.__game_status = "attempts_exhausted"
+            if attempt_error:
+                return False, attempt_error
             else:
-                # this case can't occur,
-                # but better safe than sorry!
-                print("Critical Error!")
+                    # inserted ccode is valid
+                your_attempt = list(map(int, your_attempt))
+                digit_equal = []
+                attemp_rest = []
+                secret_rest = []
+                for _ in range(0, len(secret)):
+                    if secret[_] == your_attempt[_]:
+                        digit_equal.append(your_attempt[_])
+                    else:
+                        attemp_rest.append(your_attempt[_])
+                        secret_rest.append(secret[_])
+                black_stick = len(digit_equal)
 
-            return True, the_attempt
+                white_stick = 0
+                wrong_position = True
+                while wrong_position:
+                    wrong_position = False
+                    for digit in attemp_rest:
+                        if digit in secret_rest:
+                            attemp_rest.remove(digit)
+                            secret_rest.remove(digit)
+                            white_stick += 1
+                            wrong_position = True
+                            break
+
+                the_attempt = Attempt(
+                    self.__current_att, your_attempt, black_stick, white_stick, attemp_time
+                )
+                self.__current_att += 1
+                self.__attempts_pool.append(the_attempt)
+
+                # Update status of the current game
+                if white_stick + black_stick == len(secret):
+                    self.__all_values_OK = True
+                    print("Congratulate, you quessed all Values!")
+
+                if black_stick == len(secret):
+                    print("Congratulate, you hacked the secret!")
+                    self.__code_hacked = True
+                    self.__game_active = False
+                    self.__game_status = "code_hacked"
+
+                if len(self.__attempts_pool) < self.__attempt:
+                    pass
+                elif len(self.__attempts_pool) == self.__attempt:
+                    self.__game_active = False
+                    if self.__code_hacked == False:
+                        print("not hacked")
+                        self.__game_status = "attempts_exhausted"
+                else:
+                    # this case can't occur,
+                    # but better safe than sorry!
+                    print("Critical Error!")
+
+                return True, the_attempt
 
         else:
             # this case can't occur in fact.
@@ -339,7 +360,10 @@ match current_game:
         print(repr(the_game))
         while the_game.is_running():
             quess_code = input("Insert your code: ")
-            single_attempt = the_game.next_attempt(quess_code)
+            attempt_inserted = False
+            while attempt_inserted == False:
+                attempt_inserted = the_game.next_attempt(quess_code)
+                print(attempt_inserted)
             print(repr(the_game))
             # print(the_game.attempt_pool())
         print("Final report:")
