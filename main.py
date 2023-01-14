@@ -58,18 +58,29 @@ class MasterMind:
     # - no of attempts
     # - no of digits
     # - possible values counts
-    def __limits__(self, limit_name=" "):
+    def limits(self, limit_name=" "):
         self.__the_outer_limits = {
-            "MIN_ATTEMPT": 2,
-            "MAX_ATTEMPT": 50,
-            "MIN_DIGIT": 1,
-            "MAX_DIGIT": 10,
-            "MIN_VALUES": 2,
-            "MAX_VALUES": 10,
+            "ATTEMPT_MIN": 2,
+            "ATTEMPT_MAX": 50,
+            "DIGIT_MIN": 1,
+            "DIGIT_MAX": 10,
+            "VALUES_MIN": 2,
+            "VALUES_MAX": 10
         }
         limit_value = self.__the_outer_limits.get(limit_name, False)
-        print(limit_value)
         return limit_value
+
+    def return_outer_limits(self):
+        outer_limits=""
+        outer_limits+="All limits must be interges! \n"
+        outer_limits+="All limits must be positive! \n"
+        outer_limits+= f"Count of attempts must be in range: {self.limits('ATTEMPT_MIN')} - {self.limits('ATTEMPT_MAX')}.\n"
+        outer_limits+= f"Count of each digits must be in range: {self.limits('DIGIT_MIN')} - {self.limits('DIGIT_MAX')}. \n"
+        outer_limits+= f"Value of each digit must be in range: {self.limits('VALUES_MIN')} - {self.limits('VALUES_MAX')}.\n"
+        outer_limits+= f"{self.limits()} \n"
+        return outer_limits
+
+
 
     def check_time_to_left(self):
         if self.__game_active:
@@ -97,14 +108,16 @@ class MasterMind:
         self.__option = option
         self.__digit = digit
 
+
+
         # check, if parameter of the class are in allowed limits.
-        print(attempt)
-        if attempt < self.__limits__("MIN_ATTEMPT") or attempt >= self.__limits__(
-            "MAX_ATTEMPT"
-        ):
-            error_message = "Count of attempts out of range!"
-            print(error_message)
-            return None
+        # print(attempt)
+        # if attempt < self.limits("MIN_ATTEMPT") or attempt >= self.limits03+(
+        #     "MAX_ATTEMPT"
+        # ):
+        #     error_message = "Count of attempts out of range!"
+        #     print(error_message)
+        #     return None
 
         self.__game_id = str(uuid.uuid4())
         self.__possible_values = [_ for _ in range(1, self.__option + 1)]
@@ -311,6 +324,8 @@ match current_game:
         # print(the_game.list_of_values())
 
         the_game = MasterMind(10, 8, 5)
+        limits=the_game.return_outer_limits()
+        print(limits)
         # the_game.show_secret()
         # print(the_game.list_of_values())
         # print(repr(the_game))

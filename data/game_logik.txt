@@ -1,0 +1,17 @@
+https://cs.wikipedia.org/wiki/Logik_(hra) dne: 14.ledna 2023
+Logik je název, pod nímž je v Česku známá hlavolamová společenská hra, která se ve světě prodávala pod názvem Mastermind. Hrají ji dva hráči, z nichž jeden vytvoří tajnou kombinaci pěti (v původní verzi čtyř) kolíčků různých barev a druhý se ji snaží uhodnout. Po každém pokusu se hádající hráč dozví, kolik kolíčků umístil správně a kolik špatně.
+
+Hru poprvé ve světě vydal pod názvem Mastermind izraelský poštovní a telekomunikační odborník Mordecai Meirowitz v roce 1971, hra však připomíná hru Býci a krávy, která se hraje jen s tužkou a papírem a vznikla již o více než sto let dříve. Původní verze obsahovala čtyřmístné kódy ze 6 barev. V roce 1975 se objevila verze Super Mastermind s 8 barvami a pětimístnými kódy. Tato verze se vyráběla v Československu pod názvem Logik.[1]
+
+Nyní hru vyrábí mnoho výrobců, takže se na trhu objevují i verze s jiným počtem kolíčků a barev.
+
+Pravidla hry
+Na začátku hry jeden z hráčů skrytě umístí pod stříšku libovolnou kombinaci pěti barevných kolíčků, přičemž stejná barva se může opakovat vícekrát. (Po dohodě obou hráčů je možné používat prázdný otvor jako další barvu.) Druhý hráč se tuto kombinaci snaží uhodnout tím, že vytváří kombinaci pěti kolíčků na hádacích řadách na hrací desce. První hráč každý jeho pokus vyhodnotí pomocí hodnotících kolíčků následovně:
+
+za každý hrací kolíček, který hádající hráč umístil ve správné barvě na správné místo, přidá černý kolíček (v původní verzi červený);
+za každý hrací kolíček, který hádající hráč umístil ve správné barvě, ale na špatné místo, přidá bílý kolíček.
+Hádající hráč neví, za který hrací kolíček byly přiděleny hodnotící kolíčky.
+
+Hra končí, když hádající hráč uhodne kombinaci (vítězný pokus je tedy ohodnocen plným počtem černých kolíčků, počet se může lišit podle verze hry), popř. když spotřebuje všechny řady na hrací desce, aniž by kombinaci uhodl.
+
+Hráči si pak vymění role a hra pokračuje. Vítězem se stane hráč, který k uhodnutí potřeboval méně pokusů.
