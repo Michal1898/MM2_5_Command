@@ -1195,3 +1195,296 @@ Time rest: 0:57:51.968682
  Game status: attempts_exhausted 
  Game is over! 
 --------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: c6c8d9ba-6c4c-4ee1-9b84-e5c4e7f8da7f 
+Date: 2023-01-14 
+Game started at: 09:53:07.083467 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [7, 3, 5, 4, 5] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 0 White: 0 Time: 0:00:27.893683 
+2. [2, 2, 2, 2, 2] Black: 0 White: 0 Time: 0:00:34.006723 
+3. [3, 3, 3, 3, 3] Black: 1 White: 0 Time: 0:00:13.128965 
+4. [3, 4, 4, 4, 4] Black: 1 White: 1 Time: 0:00:17.981992 
+5. [5, 3, 4, 4, 4] Black: 2 White: 1 Time: 0:00:15.223517 
+6. [5, 3, 4, 6, 6] Black: 1 White: 2 Time: 0:00:10.562800 
+7. [6, 3, 4, 7, 7] Black: 1 White: 2 Time: 0:00:14.843439 
+8. [5, 3, 4, 8, 8] Black: 1 White: 2 Time: 0:00:08.185704 
+9. [3, 4, 5, 5, 5] Black: 2 White: 2 Time: 0:01:06.094704 
+10. [3, 4, 5, 5, 6] Black: 1 White: 3 Time: 0:00:18.700026 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 0 
+ 
+Time for play: 1:01:59 
+Time left: 0:03:46.621553 
+Time rest: 0:58:12.378447 
+
+  Game flags:  
+**************
+ Game status: attempts_exhausted 
+ Game is over! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 9a14af83-3ff1-4330-b836-685bc43854f3 
+Date: 2023-01-14 
+Game started at: 10:01:56.728507 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [1, 2, 1, 7, 1] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 3 White: 0 Time: 0:00:09.807900 
+2. [1, 1, 1, 7, 7] Black: 3 White: 1 Time: 0:00:11.256535 
+3. [1, 1, 1, 7, 8] Black: 3 White: 1 Time: 0:00:13.095709 
+4. [1, 1, 1, 7, 6] Black: 3 White: 1 Time: 0:00:11.642607 
+5. [1, 1, 1, 7, 5] Black: 3 White: 1 Time: 0:00:09.953913 
+6. [1, 1, 1, 4, 7] Black: 2 White: 2 Time: 0:00:19.844832 
+7. [3, 1, 1, 7, 1] Black: 3 White: 1 Time: 0:00:53.752357 
+8. [1, 2, 1, 7, 1] Black: 5 White: 0 Time: 0:00:31.153320 
+***************************
+
+Active attempt number: 9 
+Used attempts: 8 
+Rest attempts: 2 
+ 
+Time for play: 1:01:59 
+Time left: 0:02:40.507173 
+Time rest: 0:59:18.492827 
+
+  Game flags:  
+**************
+ Game status: code_hacked 
+ Game is over! 
+You hacked the secret! I congratulate you! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 6256e184-a1e2-4681-ac7d-aac7bae916ec 
+Date: 2023-01-14 
+Game started at: 10:05:09.164812 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [4, 5, 6, 2, 5] 
+****************************************
+Attempts pool:
+***************************
+1. [8, 8, 8, 8, 8] Black: 0 White: 0 Time: 0:00:07.095670 
+2. [7, 7, 7, 7, 7] Black: 0 White: 0 Time: 0:00:05.891641 
+3. [6, 6, 6, 6, 6] Black: 1 White: 0 Time: 0:00:04.229845 
+4. [6, 6, 6, 6, 6] Black: 1 White: 0 Time: 0:00:11.279507 
+5. [6, 6, 6, 6, 6] Black: 1 White: 0 Time: 0:00:04.958896 
+6. [6, 6, 6, 6, 6] Black: 1 White: 0 Time: 0:00:03.881390 
+7. [6, 6, 6, 6, 6] Black: 1 White: 0 Time: 0:00:07.556907 
+8. [1, 1, 1, 1, 1] Black: 0 White: 0 Time: 0:00:07.225773 
+9. [2, 2, 2, 2, 2] Black: 1 White: 0 Time: 0:00:05.703911 
+10. [3, 3, 3, 3, 3] Black: 0 White: 0 Time: 0:00:06.985976 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 0 
+ 
+Time for play: 1:01:59 
+Time left: 0:01:14.317494 
+Time rest: 1:00:44.682506 
+
+  Game flags:  
+**************
+ Game status: attempts_exhausted 
+ Game is over! 
+You are looser! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: cc721573-2e77-4ab5-ad43-fb77f75c3db4 
+Date: 2023-01-14 
+Game started at: 10:15:09.743918 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [8, 8, 5, 7, 4] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 0 White: 0 Time: 0:00:11.443329 
+2. [2, 2, 2, 2, 2] Black: 0 White: 0 Time: 0:00:08.680374 
+3. [3, 3, 3, 3, 3] Black: 0 White: 0 Time: 0:00:05.639619 
+4. [4, 4, 4, 4, 4] Black: 1 White: 0 Time: 0:00:10.238771 
+5. [4, 5, 5, 5, 5] Black: 1 White: 1 Time: 0:00:08.857142 
+6. [5, 4, 6, 6, 6] Black: 0 White: 2 Time: 0:00:11.618146 
+7. [5, 5, 7, 7, 7] Black: 1 White: 1 Time: 0:00:37.607451 
+8. [5, 5, 8, 8, 7] Black: 0 White: 4 Time: 0:00:17.072888 
+***************************
+
+Active attempt number: 9 
+Used attempts: 8 
+Rest attempts: 2 
+ 
+Time for play: 0:01:59 
+Time left: 0:02:18.457286 
+Time rest: 0:00:00 
+
+  Game flags:  
+**************
+ Game status: time_exceeded 
+ Game is over! 
+ You exceeded time limit! 
+You are looser! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 7b279470-7212-4a21-bbb7-e7fac7d8a8e0 
+Date: 2023-01-14 
+Game started at: 10:18:43.500555 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [3, 4, 3, 7, 2] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 0 White: 0 Time: 0:00:18.530169 
+2. [2, 2, 2, 2, 2] Black: 1 White: 0 Time: 0:00:08.741959 
+3. [3, 2, 3, 3, 3] Black: 2 White: 1 Time: 0:00:12.628296 
+4. [3, 2, 3, 4, 4] Black: 2 White: 2 Time: 0:00:21.468584 
+5. [7, 7, 7, 7, 7] Black: 1 White: 0 Time: 0:00:13.626054 
+6. [8, 8, 8, 8, 8] Black: 0 White: 0 Time: 0:00:09.558853 
+7. [5, 5, 5, 5, 5] Black: 0 White: 0 Time: 0:07:28.174119 
+8. [6, 6, 6, 6, 6] Black: 0 White: 0 Time: 0:00:19.084608 
+9. [7, 7, 7, 7, 7] Black: 1 White: 0 Time: 0:00:37.156569 
+10. [1, 1, 1, 1, 1] Black: 0 White: 0 Time: 0:00:41.597119 
+***************************
+
+Active attempt number: 11 
+Used attempts: 10 
+Rest attempts: 0 
+ 
+Time for play: 1:02:05 
+Time left: 0:10:30.567338 
+Time rest: 0:51:34.432662 
+
+  Game flags:  
+**************
+ Game status: attempts_exhausted 
+ Game is over! 
+You are looser! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: e6b886fa-e937-422b-8aac-5cc1c6321c07 
+Date: 2023-01-14 
+Game started at: 10:29:55.480823 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [5, 1, 7, 3, 1] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 2 White: 0 Time: 0:00:45.262726 
+2. [1, 1, 7, 7, 7] Black: 2 White: 1 Time: 0:00:10.142320 
+3. [1, 7, 1, 2, 2] Black: 0 White: 3 Time: 0:00:16.525526 
+4. [1, 7, 1, 8, 8] Black: 0 White: 3 Time: 0:00:22.046301 
+5. [6, 6, 1, 1, 7] Black: 0 White: 3 Time: 0:00:15.878426 
+6. [5, 5, 5, 5, 5] Black: 1 White: 0 Time: 0:00:10.733868 
+***************************
+
+Active attempt number: 7 
+Used attempts: 6 
+Rest attempts: 4 
+ 
+Time for play: 0:02:05 
+Time left: 0:02:19.568206 
+Time rest: 0:00:00 
+
+  Game flags:  
+**************
+ Game status: time_exceeded 
+ Game is over! 
+ You exceeded time limit! 
+You are looser! 
+--------------------------------------------------
+Final report: 
+ *************
+ * L O G I C * 
+ *************
+Game ID: 1979be89-a27f-49fc-a4dc-369550e14147 
+Date: 2023-01-14 
+Game started at: 10:32:32.375666 
+ Number of attempts: 10 
+ Number of digits in quesed code: 5 
+ The digit has one of the values : 
+ [1, 2, 3, 4, 5, 6, 7, 8] 
+Digit values can be repeated. 
+****************************************
+Secret code is: [3, 8, 5, 1, 4] 
+****************************************
+Attempts pool:
+***************************
+1. [1, 1, 1, 1, 1] Black: 1 White: 0 Time: 0:00:07.393114 
+2. [1, 2, 2, 2, 2] Black: 0 White: 1 Time: 0:00:06.664117 
+3. [1, 3, 3, 3, 3] Black: 0 White: 2 Time: 0:00:12.390049 
+4. [1, 3, 4, 4, 4] Black: 1 White: 2 Time: 0:00:10.253395 
+5. [4, 3, 1, 5, 5] Black: 0 White: 4 Time: 0:00:11.342356 
+6. [4, 3, 1, 6, 5] Black: 0 White: 4 Time: 0:00:24.258802 
+7. [4, 3, 1, 7, 5] Black: 0 White: 4 Time: 0:00:24.656211 
+8. [4, 3, 1, 8, 5] Black: 0 White: 5 Time: 0:00:17.118792 
+***************************
+
+Active attempt number: 9 
+Used attempts: 8 
+Rest attempts: 2 
+ 
+Time for play: 0:02:05 
+Time left: 0:02:14.294731 
+Time rest: 0:00:00 
+
+  Game flags:  
+**************
+ Game status: time_exceeded 
+ Game is over! 
+ You exceeded time limit! 
+You guessed all the numbers. Unfortunately, the sequence is wrong! 
+--------------------------------------------------

@@ -1,9 +1,6 @@
 import datetime
 
 game_options = {"ano": True, "ne": False, "yes": True, "no": False}
-next_game = "ano"
-code_values = [_ for _ in range(1, 9)]
-
 
 class CustomException(Exception):
     pass
@@ -146,7 +143,7 @@ class MasterMind:
 
         self.__attempts_pool = []
 
-        self.set_time_for_game(1, 1, 59)
+        self.set_time_for_game(0, 2, 5)
         self.__date_of_the_game = datetime.datetime.now()
         self.__start_time = datetime.datetime.now()
         self.__temp_time = self.__start_time
@@ -266,7 +263,7 @@ class MasterMind:
 
         else:
             # this case can't occur in fact.
-            # but better save than sorry.
+            # but better safe than sorry.
             return False, "You have not attempt available!"
 
     def __repr__(self):
@@ -322,8 +319,8 @@ class MasterMind:
         else:
             MM_Report += " Game is over! \n"
 
-        if self.__time_left:
-            MM_Report += " You exceeded time limit! \n"
+            if self.__time_left:
+                MM_Report += " You exceeded time limit! \n"
 
             if self.__code_hacked:
                 MM_Report += "You hacked the secret! I congratulate you! \n"
@@ -332,73 +329,34 @@ class MasterMind:
             else:
                 MM_Report += "You are looser! \n"
 
-        # print(MM_Report)
         return MM_Report
 
 
-game_commands = [
-    "new_game",
-    "game_status",
-    "print_game",
-    "quess_code",
-    "resign",
-    "resign2",
-    "help",
-]
-current_game = ""
-# while current_game not in game_commands:
-#    current_game = str.lower(input("Co chces delat dale? "))
-current_game = "new_game"
-match current_game:
-    case "new_game":
-        # the_game = MasterMind()
-        # the_game.show_secret()
-        # print(the_game.list_of_values())
 
-        the_game = MasterMind(10,8,5)
 
-        print(repr(the_game))
-        while the_game.is_running():
-            quess_code = input("Insert your code: ")
-            attempt_inserted = False
-            while attempt_inserted == False:
-                attempt_inserted = the_game.next_attempt(quess_code)
-                print(attempt_inserted)
-            print(repr(the_game))
-            # print(the_game.attempt_pool())
-        print("Final report:")
-        print(repr(the_game))
+the_game = MasterMind(10,8,5)
 
-        # Save game to the file:
-        print("I will save finished game to the file.")
-        with open("data/mm_games.txt", "a") as f:
-            f.write("Final report: \n")
-            f.write(repr(the_game))
-            f.write("-" * 50)
-            f.write("\n")
-        print("Game was saved.")
+print(repr(the_game))
+while the_game.is_running():
+    quess_code = input("Insert your code: ")
+    attempt_inserted = False
+    while attempt_inserted == False:
+        attempt_inserted = the_game.next_attempt(quess_code)
+        print(attempt_inserted)
+    print(repr(the_game))
+    # print(the_game.attempt_pool())
+print("Final report:")
+print(repr(the_game))
 
-        # the_attempt = Attempt(13, [1 ,2 ,3 ,8 ,111], 19, 7)
-        # print(the_attempt)
-        # the_attempt2 = Attempt("7 7 7 13 13 13", 17)
-        # the_game = MasterMind(7,10,4)
-        # the_game.show_secret()
-        # print(the_game.list_of_values())
-        # print(repr(the_game))
+# Save game to the file:
+print("I will save finished game to the file.")
+with open("data/mm_games.txt", "a") as f:
+    f.write("Final report: \n")
+    f.write(repr(the_game))
+    f.write("-" * 50)
+    f.write("\n")
+print("Game was saved.")
 
-    case "game_status":
-        pass
-    case "print_game":
-        pass
-    case "quess_code":
-        pass
-    case "resign":
-        pass
-    case "resign2":
-        pass
-    case "help":
-        pass
 
-print(current_game)
 
 print("Game over!")
