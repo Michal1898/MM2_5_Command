@@ -30,7 +30,7 @@ class Attempt:
 
 
 class MasterMind:
-    def __init__(self, attempt=10, option=8, digit=5):
+    def __init__(self, attempt=10, option=8, digit=5 , time_limit = 30):
         import uuid
         from random import choices
 
@@ -44,6 +44,7 @@ class MasterMind:
             isinstance(attempt, int)
             and isinstance(option, int)
             and isinstance(digit, int)
+            and isinstance(time_limit, int)
         ):
             if attempt < self.limits("ATTEMPT_MIN") or attempt > self.limits(
                 "ATTEMPT_MAX"
@@ -56,6 +57,9 @@ class MasterMind:
                 error_message = "Count of options out of range!"
             elif digit < self.limits("DIGIT_MIN") or digit > self.limits("DIGIT_MAX"):
                 error_message = "Count of digits out of range!"
+
+            elif time_limit < self.limits("TIME_MIN") or time_limit > self.limits("TIME_MAX"):
+                error_message = "Time limit out of range!"
         else:
             error_message = "Parameters must be integer!"
 
@@ -85,22 +89,19 @@ class MasterMind:
 
         self.__attempts_pool = []
 
-        self.set_time_for_game(1, 0, 0)
+        self.set_time_for_game(time_limit)
         self.__date_of_the_game = datetime.datetime.now()
         self.__start_time = datetime.datetime.now()
         self.__temp_time = self.__start_time
         print(f"Good luck")
 
     # Set time limit for the game
-    # h ... hours
-    # m ... minutes
-    # s ... seconds
-    def set_time_for_game(self, h=1, m=3, s=59):
-        # in this case is time set for:
-        # 1 hour,
-        # 3 minutes
-        # and 59 seconds
-        self.__TIME_FOR_GAME = datetime.timedelta(days=0, hours=h, minutes=m, seconds=s)
+    # Time limit in minutes.
+    def set_time_for_game(self, time_limit = 30):
+        # default time for quessing set to 30 minutes.
+        h = int(time_limit / 60)
+        m = time_limit % 60
+        self.__TIME_FOR_GAME = datetime.timedelta(days=0, hours=h, minutes=m, seconds=0)
         return True, self.__TIME_FOR_GAME
 
     def return_time_for_game(self):
@@ -130,6 +131,10 @@ class MasterMind:
             "DIGIT_MAX": 10,
             "VALUES_MIN": 2,
             "VALUES_MAX": 16,
+            "TIME_MIN": 5, # 5 minutes per game is minimum.
+            "TIME_MAX": 600,
+            # 10 hours per game ought to be enough for anybody.
+
         }
         limit_value = self.__the_outer_limits.get(limit_name, False)
         return limit_value
@@ -141,6 +146,7 @@ class MasterMind:
         outer_limits += f"Count of attempts must be in range: {self.limits('ATTEMPT_MIN')} - {self.limits('ATTEMPT_MAX')}.\n"
         outer_limits += f"Count of digits must be in range: {self.limits('DIGIT_MIN')} - {self.limits('DIGIT_MAX')}. \n"
         outer_limits += f"Values for each digit must be in range: {self.limits('VALUES_MIN')} - {self.limits('VALUES_MAX')}.\n"
+        outer_limits += f"Time must be in range: {self.limits('TIME_MIN')} - {self.limits('TIME_MAX')} minutes.\n"
         return outer_limits
 
     def check_time_to_left(self):
@@ -358,7 +364,7 @@ class MasterMind:
         return MM_Report
 
 if __name__ == "__main__":
-    the_game = MasterMind(10, 6, 4)
+    the_game = MasterMind(10, 8, 5, 10)
 
     print(repr(the_game))
     while the_game.is_running():
