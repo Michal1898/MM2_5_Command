@@ -8,7 +8,7 @@ pip-log.txt
 pip-delete-this-directory.txt
 *.log
 
-
+data/mm_games.txt
 
 # Environment
 .env
