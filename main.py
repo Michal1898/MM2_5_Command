@@ -186,7 +186,7 @@ class MasterMind:
 
     def next_attempt(self, your_attempt="0 0 0 0 0"):
         self.check_time_to_left()
-        if self.__game_active == False:
+        if not self.__game_active:
             return False, "Game is not active!"
 
         elif self.__current_att < self.__attempt:
@@ -265,7 +265,7 @@ class MasterMind:
                     pass
                 elif len(self.__attempts_pool) == self.__attempt:
                     self.__game_active = False
-                    if self.__code_hacked == False:
+                    if not self.__code_hacked:
                         print("not hacked")
                         self.__game_status = "attempts_exhausted"
                 else:
@@ -295,7 +295,7 @@ class MasterMind:
             f" The digit has one of the values : \n {self.__possible_values} \n"
         )
         MM_Report += "Digit values can be repeated. \n"
-        if self.is_running() == False:
+        if not self.is_running():
             MM_Report += 40 * "*" + "\n"
             MM_Report += self.show_secret()
         MM_Report += 40 * "*" + "\n"
@@ -352,7 +352,7 @@ print(repr(the_game))
 while the_game.is_running():
     quess_code = input("Insert your code: ")
     attempt_inserted = False
-    while attempt_inserted == False:
+    while not attempt_inserted:
         attempt_inserted = the_game.next_attempt(quess_code)
         print(attempt_inserted)
     print(repr(the_game))
