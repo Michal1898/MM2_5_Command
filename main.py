@@ -30,6 +30,67 @@ class Attempt:
 
 
 class MasterMind:
+    def __init__(self, attempt=10, option=8, digit=5):
+        import uuid
+        from random import choices
+
+        self.__game_status = "parameter_checking"
+        self.__game_active = False
+
+        print("Test of the input parameters \n")
+        # check, if all parameter of the class are in allowed limits.
+        error_message = False
+        if (
+            isinstance(attempt, int)
+            and isinstance(option, int)
+            and isinstance(digit, int)
+        ):
+            if attempt < self.limits("ATTEMPT_MIN") or attempt > self.limits(
+                "ATTEMPT_MAX"
+            ):
+                error_message = "Count of attempts out of range!"
+
+            elif option < self.limits("VALUES_MIN") or option > self.limits(
+                "VALUES_MAX"
+            ):
+                error_message = "Count of options out of range!"
+            elif digit < self.limits("DIGIT_MIN") or digit > self.limits("DIGIT_MAX"):
+                error_message = "Count of digits out of range!"
+        else:
+            error_message = "Parameters must be integer!"
+
+        if error_message:
+            print(self.return_outer_limits())
+            raise CustomException(error_message)
+            return error_message
+
+        print("Parameters are OK. I start the game. \n")
+        self.__attempt = attempt
+        self.__option = option
+        self.__digit = digit
+
+        self.__game_id = str(uuid.uuid4())
+        print(f"Created new game with ID {self.__game_id}")
+        print("I generate the secret code. ")
+        self.__possible_values = [_ for _ in range(1, self.__option + 1)]
+        self.__secret_code = choices(self.__possible_values, k=self.__digit)
+        print("Secret Code was generated.")
+        self.__game_status = "game_running"
+        self.__current_att = 0
+        self.__game_active = True
+        self.__code_hacked = False
+        self.__all_values_OK = False
+        self.__time_left = False
+        self.__all_attempts_exhausted = False
+
+        self.__attempts_pool = []
+
+        self.set_time_for_game(1, 0, 0)
+        self.__date_of_the_game = datetime.datetime.now()
+        self.__start_time = datetime.datetime.now()
+        self.__temp_time = self.__start_time
+        print(f"Good luck")
+
     # Set time limit for the game
     # h ... hours
     # m ... minutes
@@ -97,67 +158,6 @@ class MasterMind:
             return datetime.timedelta(seconds=0)
         else:
             return rest_time
-
-    def __init__(self, attempt=10, option=8, digit=5):
-        import uuid
-        from random import choices
-
-        self.__game_status = "parameter_checking"
-        self.__game_active = False
-
-        print("Test of the input parameters \n")
-        # check, if all parameter of the class are in allowed limits.
-        error_message = False
-        if (
-            isinstance(attempt, int)
-            and isinstance(option, int)
-            and isinstance(digit, int)
-        ):
-            if attempt < self.limits("ATTEMPT_MIN") or attempt > self.limits(
-                "ATTEMPT_MAX"
-            ):
-                error_message = "Count of attempts out of range!"
-
-            elif option < self.limits("VALUES_MIN") or option > self.limits(
-                "VALUES_MAX"
-            ):
-                error_message = "Count of options out of range!"
-            elif digit < self.limits("DIGIT_MIN") or digit > self.limits("DIGIT_MAX"):
-                error_message = "Count of digits out of range!"
-        else:
-            error_message = "Parameters must be integer!"
-
-        if error_message:
-            print(self.return_outer_limits())
-            raise CustomException(error_message)
-            return error_message
-
-        print("Parameters are OK. I start the game. \n")
-        self.__attempt = attempt
-        self.__option = option
-        self.__digit = digit
-
-        self.__game_id = str(uuid.uuid4())
-        print(f"Created new game with ID {self.__game_id}")
-        print("I generate the secret code. ")
-        self.__possible_values = [_ for _ in range(1, self.__option + 1)]
-        self.__secret_code = choices(self.__possible_values, k=self.__digit)
-        print("Secret Code was generated.")
-        self.__game_status = "game_running"
-        self.__current_att = 0
-        self.__game_active = True
-        self.__code_hacked = False
-        self.__all_values_OK = False
-        self.__time_left = False
-        self.__all_attempts_exhausted = False
-
-        self.__attempts_pool = []
-
-        self.set_time_for_game(1, 0, 0)
-        self.__date_of_the_game = datetime.datetime.now()
-        self.__start_time = datetime.datetime.now()
-        self.__temp_time = self.__start_time
-        print(f"Good luck")
 
     def show_secret(self):
         return f"Secret code is: {self.__secret_code} \n"
