@@ -357,29 +357,29 @@ class MasterMind:
 
         return MM_Report
 
+if __name__ == "__main__":
+    the_game = MasterMind(10, 6, 4)
 
-the_game = MasterMind(10, 8, 5)
-
-print(repr(the_game))
-while the_game.is_running():
-    quess_code = input("Insert your code: ")
-    attempt_inserted = False
-    while not attempt_inserted:
-        attempt_inserted = the_game.next_attempt(quess_code)
-        print(attempt_inserted)
     print(repr(the_game))
-    # print(the_game.attempt_pool())
-print("Final report:")
-print(repr(the_game))
+    while the_game.is_running():
+        quess_code = input("Insert your code: ")
+        attempt_inserted = False
+        while not attempt_inserted:
+            attempt_inserted = the_game.next_attempt(quess_code)
+            print(attempt_inserted)
+        print(repr(the_game))
+        # print(the_game.attempt_pool())
+    print("Final report:")
+    print(repr(the_game))
 
-# Save game to the file:
-print("I will save finished game to the file.")
-with open("data/mm_games.txt", "a") as f:
-    f.write("Final report: \n")
-    f.write(repr(the_game))
-    f.write("-" * 50)
-    f.write("\n")
-print("Game was saved.")
+    # Save game to the file:
+    print("I will save finished game to the file.")
+    with open("data/mm_games.txt", "a") as f:
+        f.write("Final report: \n")
+        f.write(repr(the_game))
+        f.write("-" * 50)
+        f.write("\n")
+    print("Game was saved.")
 
 
-print("Game over!")
+    print("Game over!")
