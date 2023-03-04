@@ -313,11 +313,20 @@ class MasterMind:
             f" The digit has one of the values : \n {self.__possible_values} \n"
         )
         MM_Report += "Digit values can be repeated. \n"
+
+        MM_Report += f"Active attempt number: {self.active_attempt() + 1} \n"
+        MM_Report += f"Used attempts: {len(self.__attempts_pool)} \n"
+        MM_Report += f"Rest attempts: {self.rest_attempt()} \n \n"
+
+        MM_Report += f"Time for play: {self.return_time_for_game()} \n"
+        MM_Report += f"Time left: {self.game_duration() } \n"
+        MM_Report += f"Time rest: {self.return_rest_time() } \n"
+        MM_Report += "\n"
+
         if not self.is_running():
             MM_Report += 40 * "*" + "\n"
             MM_Report += self.show_secret()
-        MM_Report += 40 * "*" + "\n"
-
+            MM_Report += 40 * "*" + "\n"
         MM_Report += "Attempts pool:\n"
         MM_Report += "***************************\n"
 
@@ -327,14 +336,6 @@ class MasterMind:
         else:
             MM_Report += "****** Pool is empty ******\n"
         MM_Report += "***************************\n"
-        MM_Report += "\n"
-        MM_Report += f"Active attempt number: {self.active_attempt() + 1} \n"
-        MM_Report += f"Used attempts: {len(self.__attempts_pool)} \n"
-        MM_Report += f"Rest attempts: {self.rest_attempt()} \n \n"
-
-        MM_Report += f"Time for play: {self.return_time_for_game()} \n"
-        MM_Report += f"Time left: {self.game_duration() } \n"
-        MM_Report += f"Time rest: {self.return_rest_time() } \n"
         MM_Report += "\n"
         MM_Report += "  Game flags:  \n"
         MM_Report += "**************\n"
@@ -364,7 +365,7 @@ class MasterMind:
         return MM_Report
 
 if __name__ == "__main__":
-    the_game = MasterMind(10, 8, 5, 10)
+    the_game = MasterMind(10, 8, 5, 13)
 
     print(repr(the_game))
     while the_game.is_running():
