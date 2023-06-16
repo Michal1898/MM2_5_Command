@@ -220,7 +220,7 @@ class MasterMind:
         attemp_rest = []
         secret_rest = []
         secret = self.__secret_code
-        print(secret)
+
         for _ in range(0, self.__digit):
             if secret[_] == your_attempt[_]:
                 digit_equal.append(your_attempt[_])
@@ -365,7 +365,7 @@ class MasterMind:
         return MM_Report
 
 if __name__ == "__main__":
-    the_game = MasterMind(10, 8, 5, 13)
+    the_game = MasterMind(10, 8, 5, 21)
 
     print(repr(the_game))
     while the_game.is_running():
