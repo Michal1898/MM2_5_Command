@@ -365,7 +365,11 @@ class MasterMind:
         return MM_Report
 
 if __name__ == "__main__":
-    the_game = MasterMind(10, 8, 5, 21)
+    attempt = 8
+    value = 2
+    digit = 8
+    time = 8
+    the_game = MasterMind(attempt, value, digit, time)
 
     print(repr(the_game))
     while the_game.is_running():
