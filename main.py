@@ -365,10 +365,11 @@ class MasterMind:
         return MM_Report
 
 if __name__ == "__main__":
-    attempt = 8
-    value = 2
-    digit = 8
-    time = 8
+    # old version of Master Mind
+    attempt = 10 # you have 10 attempts
+    value = 6 # value can be 1 , 2, 3, 4, 5, 6
+    digit = 4 # 4 digits of secret code
+    time = 11  #11 minutes to break code
     the_game = MasterMind(attempt, value, digit, time)
 
     print(repr(the_game))
