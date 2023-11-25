@@ -1,4 +1,6 @@
 import datetime
+import errno
+import os
 
 game_options = {"ano": True, "ne": False, "yes": True, "no": False}
 
@@ -369,7 +371,7 @@ if __name__ == "__main__":
     attempt = 10 # you have 10 attempts
     value = 6 # value can be 1 , 2, 3, 4, 5, 6
     digit = 4 # 4 digits of secret code
-    time = 11  #11 minutes to break code
+    time = 5  #5 minutes to break code
     the_game = MasterMind(attempt, value, digit, time)
 
     print(repr(the_game))
@@ -386,12 +388,22 @@ if __name__ == "__main__":
 
     # Save game to the file:
     print("I will save finished game to the file.")
-    with open("data/mm_games.txt", "a") as f:
-        f.write("Final report: \n")
-        f.write(repr(the_game))
-        f.write("-" * 50)
-        f.write("\n")
-    print("Game was saved.")
 
+    try:
+        with open("data/mm_games.txt", "a") as f:
+            f.write("Final report: \n")
+            f.write(repr(the_game))
+            f.write("-" * 50)
+            f.write("\n")
+            print("Game was saved succesfully.")
 
-    print("Game over!")
+    except FileNotFoundError:
+            print("Folder /data is missing.")
+            print("Create it, to have game report.")
+
+    except PermissionError:
+        print("File is read-only.")
+        print("Change atributes, to have game report.")
+
+    finally:
+        print("Game over!")
