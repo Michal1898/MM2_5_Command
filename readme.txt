@@ -1,4 +1,4 @@
-class Master Mind is the backend class, which allows to play logic game Master Mind. In the Czech republic is this game known under the name Logic.
+class MasterMind is the backend class, which allows to play logic game Master Mind. In the Czech republic is this game known under the name Logic.
 
 Rules of game:
 
@@ -14,3 +14,30 @@ The game continue until codemaker break the secret code or all attempts are exha
 
 The old variation:
 There ist 6 different colors. There are 4 holes. There is usually also 10 attempts. Rest of the rules is the same as by standard version.
+
+Stuff in if __name__ == "__main__":
+
+Class MasterMind is primarily intended as frontend for larger projects. It should be imported in this case.
+But for testing purposes and to allow play game in single command line, this code snippet is used.
+It is also tutorial for better understanding for using of class MasterMind.
+
+    attempt = 10 # you have 10 attempts
+    value = 6 # value can be 1 , 2, 3, 4, 5, 6
+    digit = 4 # 4 digits of secret code
+    time = 5  #5 minutes to break code
+    the_game = MasterMind(attempt, value, digit, time)
+Initiate class MasterMind as the_game.
+
+
+print(repr(the_game))
+generate report about actual state of current game.
+
+
+while the_game.is_running():
+  .....
+Pooling of the flag for game running.
+Until the game is active, you can try to break the secret code.
+print(repr(the_game)) inform you about actual state of current game.
+When the game is over, this flag is cleared.
+
+When game is over, final game report is generated and saved to the file.
