@@ -41,3 +41,20 @@ print(repr(the_game)) inform you about actual state of current game.
 When the game is over, this flag is cleared.
 
 When game is over, final game report is generated and saved to the file.
+
+Description of class MasterMind and how to use it:
+class Attempt:
+class Attempt is part of class MasterMind. For each attempt to break code, one object of class MasterMind.
+
+def __init__(
+        self, att_no, your_code=[], white=0, black=0, duration=datetime.time(0)
+    ):
+For new attempt is new object initialised. Its attributes are:
+ att_no  ... index of attempt
+ your_code ... value of quessed code
+ white = number of white code pegs
+ white = number of black code pegs
+ duration = time per attempt
+
+def __repr__(self):
+Return text string with values of this attempt.
