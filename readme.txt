@@ -58,3 +58,7 @@ For new attempt is new object initialised. Its attributes are:
 
 def __repr__(self):
 Return text string with values of this attempt.
+
+if __name__ == "__main__":
+This short main is used for testing purposes and also to show possibilities, which offers Class Mastermind. 
+Class MasterMind(attempt, value, digit, time) is primarily intended to be used as imported module.
