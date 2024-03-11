@@ -368,10 +368,10 @@ class MasterMind:
 
 if __name__ == "__main__":
     # old version of Master Mind
-    attempt = 10 # you have 10 attempts
-    value = 6 # value can be 1 , 2, 3, 4, 5, 6
-    digit = 4 # 4 digits of secret code
-    time = 5  #5 minutes to break code
+    attempt = 13 # you have 10 attempts
+    value = 8 # value can be 1 , 2, 3, 4, 5, 6
+    digit = 5 # 4 digits of secret code
+    time = 11  #5 minutes to break code
     the_game = MasterMind(attempt, value, digit, time)
 
     print(repr(the_game))
